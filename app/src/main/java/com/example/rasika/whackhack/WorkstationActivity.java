@@ -129,25 +129,25 @@ public class WorkstationActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"All fields must be selected",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    redirectToListOfRoomsPage();
+                    redirectToListOfWsPage();
                 }
             }
         });
 
     }
-    private void redirectToListOfRoomsPage(){
+    private void redirectToListOfWsPage(){
         //int[] selections = {clusterSelected,wingSelected,floorSelected};
         //getAvailableRooms(selections) into string array strings;
-        String[] listOfRooms={"room1","room2","room3"};
+        String[] listOfWs={"ws1","ws2","ws3"};
         ArrayList<String> stringArrayList = new ArrayList<String>();
-        stringArrayList.add(listOfRooms[0]);
-        stringArrayList.add(listOfRooms[1]);
-        stringArrayList.add(listOfRooms[2]);
+        stringArrayList.add(listOfWs[0]);
+        stringArrayList.add(listOfWs[1]);
+        stringArrayList.add(listOfWs[2]);
         //Toast.makeText(getApplicationContext(),strings[0] , Toast.LENGTH_LONG).show();
         Bundle b = new Bundle();
         b.putStringArrayList("arrList",stringArrayList);
-        Intent intent = new Intent(this, LORActivity.class);
-        intent.putExtra("ROOMS_ARRAY", stringArrayList);
+        Intent intent = new Intent(this, LOWActivity.class);
+        intent.putExtra("WS_ARRAY", stringArrayList);
         startActivity(intent);
     }
 
